@@ -1,38 +1,44 @@
-import React from 'react';
-// import RegisterForm from '../components/RegisterForm';
-// import LocationFilter from '../components/LocationFilter';
+import React, { useState } from 'react';
+import RegisterForm from '../components/RegisterForm'; // Assuming RegisterForm is present
+import LocationFilter from '../components/LocationFilter'; // Assuming LocationFilter is present
 import '../HomePage.css'; // Import the CSS file
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
+  const [showRegisterForm, setShowRegisterForm] = useState(true);
+
+  const toggleView = () => {
+    setShowRegisterForm(!showRegisterForm);
+  };
+
   return (
     <div className="home-page">
-    {/* Navbar */}
-    <nav className="navbar">
-      <div className="nav-links">
-        <Link to="/register">Register</Link>
-        <Link to="/location-filter">Location Filter</Link>
-      </div>
-    </nav>
-
-    {/* Project Title and Description */}
-    <header className="header">
-      <h1 className="project-title">My Project Title</h1>
-      <p className="project-description">
-        This is a brief description about the project, explaining its purpose and features.
-      </p>
-    </header>
-
-    {/* Post Cards */}
-    <div className="cards-grid">
-      {[1, 2, 3, 4, 5].map((card) => (
-        <div key={card} className="card">
-          <h3>Post Title {card}</h3>
-          <p>This is a sample description for post {card}.</p>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
         </div>
-      ))}
+      </nav>
+
+      {/* Project Title and Description */}
+      <header className="header">
+        <h1 className="project-title">Ping and Locate</h1>
+        <p className="project-description">
+        The "Ping and Locate" website is designed to provide real-time tracking and location identification services. It allows users to ping or check the status of a specific device, server, or network resource, and also locate or trace its geographical location based on IP address or GPS data.
+        </p>
+      </header>
+
+      {/* Toggle Button */}
+      <button className="toggle-btn" onClick={toggleView}>
+        Switch to {showRegisterForm ? 'Location Filter' : 'Register Form'}
+      </button>
+
+      {/* Conditional Form Rendering */}
+      <div className="form-container">
+        {showRegisterForm ? <RegisterForm /> : <LocationFilter />}
+      </div>
     </div>
-  </div>
   );
 };
 

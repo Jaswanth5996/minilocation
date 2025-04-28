@@ -1,92 +1,107 @@
-/* General Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-  }
-  
-  .home-page {
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Makes the whole layout stack vertically */
-  }
-  
-  /* Navbar */
-  .navbar {
-    background-color: #3498db; /* Navbar background color */
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: white; /* White text for the links */
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Project Title and Description */
-  .header {
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  
-  .project-title {
-    font-size: 32px;
-    color: #2c3e50;
-    margin-bottom: 10px;
-  }
-  
-  .project-description {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  /* Cards Grid */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 2rem;
-  }
-  
-  .card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  /* Handling only 2 cards in second row */
-  @media (max-width: 900px) {
-    .cards-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .cards-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
+/* Base Styles */
+.home-page {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: block; /* Ensure the content is stacked */
+  font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+}
+
+.navbar {
+  background-color: #333;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.nav-links a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff6a00;
+}
+
+.header {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 4rem; /* Larger size for better emphasis */
+  font-weight: 800; /* Bold for impact */
+  color: #222;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  background-image: linear-gradient(90deg, #ff6a00, #ffcc00);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.project-title:hover {
+  background-size: 100% 30px;
+}
+
+.project-description {
+  font-size: 1.4rem; /* Slightly larger size for readability */
+  color: #555;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Button */
+.toggle-btn {
+  margin-top: 30px;
+  padding: 12px 28px;
+  background-color: #007bff;
+  color: white;
+  width:100%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: 600; /* Slightly bolder text */
+  border-radius: 30px; /* Rounded corners for a modern look */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly scale up the button on hover */
+}
+
+/* Conditional Form Container */
+.form-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles (optional, customize as needed) */
+.form-slide > * {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  overflow: auto;
+  font-size: 1.1rem; /* Slightly larger font for the form content */
+  color: #444;
+}
+
