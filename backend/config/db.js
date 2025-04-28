@@ -1,15 +1,21 @@
-import pkg from 'pg';
 import dotenv from 'dotenv';
+import pg from 'pg';
 
+const { Pool } = pg;
+
+// Load environment variables
 dotenv.config();
 
-const { Pool } = pkg;
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  user:"jay1",
+  host:"dpg-d07k2phr0fns738l45lg-a.oregon-postgres.render.com",
+  database:"location_1",
+  password:"v86WotU5uPmMGn077LNUAtO9MQXCHChs",
+  port:parseInt(5432, 10),
+  ssl: {
+    rejectUnauthorized: false   // <--- important
+  }
+
 });
 
 pool.connect()

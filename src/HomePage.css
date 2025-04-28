@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .home-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Makes the whole layout stack vertically */
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #3498db; /* Navbar background color */
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white; /* White text for the links */
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Project Title and Description */
+  .header {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .project-title {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .project-description {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Cards Grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 2rem;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Handling only 2 cards in second row */
+  @media (max-width: 900px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
